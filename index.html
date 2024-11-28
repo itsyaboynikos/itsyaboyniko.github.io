@@ -8,7 +8,7 @@
     /* General body styling */
     body {
       font-family: 'Arial', sans-serif; /* Font style */
-      background-color: #1a1a1a; /* Dark background */
+      background-color: #1a1a1a; /* Dark background as a fallback */
       color: #e0e0e0; /* Light text color for contrast */
       text-align: center; /* Center text alignment */
       margin: 0;
@@ -17,6 +17,10 @@
       justify-content: center;
       align-items: center;
       height: 100vh; /* Full viewport height */
+      background-image: url('https://selfharm.lol/static/meow.gif'); /* GIF as background */
+      background-size: cover; /* Make sure the background covers the entire page */
+      background-position: center; /* Center the GIF */
+      background-repeat: no-repeat; /* Prevent the GIF from repeating */
       transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
     }
 
