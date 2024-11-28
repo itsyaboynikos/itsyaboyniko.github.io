@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>antisocialskills</title>
   <style>
     /* General body styling */
     body {
       font-family: 'Arial', sans-serif; /* Font style */
-      background-color: #f0f0f0; /* Light background color */
+      background-color: #f0f0f0; /* Light background by default */
       color: #333; /* Dark text color for contrast */
       text-align: center; /* Center text alignment */
       margin: 0;
@@ -14,6 +17,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh; /* Full viewport height */
+      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
     }
 
     /* Heading styling */
@@ -29,10 +33,54 @@
       font-size: 1.5em; /* Slightly larger text for readability */
       font-weight: bold;
     }
+
+    /* Dark theme styles */
+    body.dark-theme {
+      background-color: #1a1a1a; /* Dark background */
+      color: #e0e0e0; /* Light text color for contrast */
+    }
+
+    /* Dark theme heading */
+    body.dark-theme h1 {
+      color: #ff6347; /* Tomato color for the heading */
+    }
+
+    /* Dark theme paragraph */
+    body.dark-theme p {
+      color: #ddd; /* Lighter gray text for the paragraph */
+    }
+
+    /* Button styling for toggling themes */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #1e90ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: background-color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background-color: #3b8dff;
+    }
+
   </style>
 </head>
 <body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Dark Mode</button>
   <h1>antisocialskills</h1>
   <p>niko made me.</p>
+
+  <script>
+    // Function to toggle between dark and light themes
+    function toggleTheme() {
+      document.body.classList.toggle('dark-theme');
+    }
+  </script>
 </body>
 </html>
