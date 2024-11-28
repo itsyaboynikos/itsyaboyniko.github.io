@@ -1,67 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>antisocialskills</title>
-  <style>
-    /* General body styling */
-    body {
-      font-family: 'Arial', sans-serif; /* Font style */
-      background-color: #1a1a1a; /* Dark background as a fallback */
-      color: #e0e0e0; /* Light text color for contrast */
-      text-align: center; /* Center text alignment */
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh; /* Full viewport height */
-      background-image: url('https://itsyaboynikos.github.io/meow.gif'); /* GIF as background */
-      background-size: cover; /* Make sure the background covers the entire page */
-      background-position: center; /* Center the GIF */
-      background-repeat: no-repeat; /* Prevent the GIF from repeating */
-      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
-      flex-direction: column; /* Stack the content vertically */
-    }
-
-    /* Date and time styling */
-    .datetime {
-      color: #ffffff; /* White color for the date and time */
-      font-size: 1.5em; /* Smaller font size */
-      position: absolute; /* Position the text at the top */
-      top: 20px; /* Space from the top of the screen */
-      left: 50%; /* Center the text horizontally */
-      transform: translateX(-50%); /* Adjust to perfectly center */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Site</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="datetime" id="datetime"></div>
+    <div class="datetime" id="datetime"></div>
+    <div class="top-right-controls">
+        <button id="playButton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M8 5v14l11-7z" />
+            </svg>
+        </button>
+        <div class="volume-control">
+            <button id="volumeButton">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="white" d="M5 9v6h4l5 5V4l-5 5H5zM16 7.82v8.36c1.45-.72 2.5-2.1 2.5-4.18s-1.05-3.46-2.5-4.18z" />
+                </svg>
+            </button>
+            <input type="range" id="volumeSlider" min="0" max="100" value="50" />
+        </div>
+    </div>
+    
+    <div class="sidebar">
+        <div class="icon-container">
+            <a href="#" target="_blank"> 
+                <img src="icons/antisocial.png" alt="Website">
+            </a>
+            <p>Website</p>
+        </div>
+        <div class="icon-container">
+            <a href="https://telegram.org" target="_blank">
+                <img src="icons/Telegram_logo.svg.webp" alt="Telegram">
+            </a>
+            <p>Telegram</p>
+        </div>
+        <div class="icon-container">
+            <a href="https://google.com" target="_blank">
+                <img src="icons/BreachForums_logo.png" alt="Google">
+            </a>
+            <p>BreachForums</p>
+        </div>
+    </div>
 
-  <script>
-    function updateDateTime() {
-      const dateTimeElement = document.getElementById('datetime');
-      const now = new Date();
-      
-      // Format date as "28 Nov"
-      const day = now.getDate();
-      const month = now.toLocaleString('default', { month: 'short' }); // Get the abbreviated month
-      const formattedDate = `${day} ${month}`;
-
-      // Format time as "11:30"
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const formattedTime = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-
-      dateTimeElement.textContent = `${formattedDate} ${formattedTime}`;
-    }
-
-    // Update the time every second
-    setInterval(updateDateTime, 1000);
-
-    // Initial call to set the date and time
-    updateDateTime();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'CustomMono';
+    src: url('/font/mono.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'CustomMono', monospace; 
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(21, 21, 22);
+    background-image: url('https://itsyaboynikos.github.io/meow.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.sidebar {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.datetime {
+    color: #ffffffb6; 
+    font-size: 1.0em; 
+    position: absolute; 
+    top: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    background-color: rgba(0, 0, 0, 0.226);
+    padding: 1vh;
+    border-radius: 0.75vh;
+  }
+
+.sidebar button, .sidebar img {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebar img {
+    border-radius: 5px;
+}
+
+.sidebar button:hover, .sidebar img:hover {
+    filter: brightness(0.8);
+}
+
+
+.icon-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.icon-container img {
+    width: 7.5vh;
+    height: 7.5vh;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.icon-container img:hover {
+    filter: brightness(0.8);
+}
+
+.icon-container p {
+    font-size: 12px;
+    color: #ffffffb6;
+    text-align: center;
+    margin: 0;
+}
+
+.top-right-controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.top-right-controls button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.top-right-controls button svg {
+    fill: white;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.top-right-controls button:hover svg {
+    transform: scale(1.2);
+    filter: brightness(0.8);
+}
+
+
+.volume-control {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#volumeSlider {
+    width: 120px;
+    display: none; 
+    cursor: pointer;
+    -webkit-appearance: none; 
+    appearance: none;
+    background: #ffffffb6;
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #ffffffb6;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 1px solid #ffffffb6;
+}
+
+svg {
+    filter:brightness(50%)
+}
