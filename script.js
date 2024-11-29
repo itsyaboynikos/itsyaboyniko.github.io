@@ -63,3 +63,12 @@ volumeSlider.addEventListener("input", (event) => {
 });
 
 
+function playClickSound() {
+    const clickSound = document.getElementById('clickSound');
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+document.querySelectorAll('.clickable').forEach(element => {
+    element.addEventListener('click', playClickSound);
+});
