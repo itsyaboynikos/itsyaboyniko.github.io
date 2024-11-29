@@ -63,3 +63,13 @@ volumeSlider.addEventListener("input", (event) => {
 });
 
 
+// Add click sound to the entire document
+document.addEventListener('click', function() {
+    const clickSound = document.getElementById('clickSound');
+
+    // Reset sound to start and play
+    clickSound.currentTime = 0;
+    clickSound.play().catch(error => {
+        console.log('Audio play failed', error);
+    });
+});

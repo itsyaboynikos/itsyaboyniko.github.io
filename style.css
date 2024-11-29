@@ -162,15 +162,8 @@ svg {
     display: inline-block;
 }
 
-.clickable {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f0f0f0;
-    margin: 10px;
-    display: inline-block;
-    border: 1px solid black;
-}
-
-#errorMessage {
-    color: red;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
 }
