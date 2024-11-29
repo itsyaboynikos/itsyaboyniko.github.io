@@ -72,3 +72,53 @@ function playClickSound() {
 document.querySelectorAll('.clickable').forEach(element => {
     element.addEventListener('click', playClickSound);
 });
+
+function playClickSound() {
+    const clickSound = document.getElementById('clickSound');
+    const errorMessage = document.getElementById('errorMessage');
+
+    // Check if audio element exists
+    if (!clickSound) {
+        errorMessage.textContent = "Audio element not found!";
+        return;
+    }
+
+    // Check if sound file is loaded
+    if (clickSound.readyState === 0) {
+        errorMessage.textContent = "Sound file not loaded. Check file path!";
+        return;
+    }
+
+    try {
+        // Attempt to play sound
+        clickSound.currentTime = 0;
+        const playPromise = clickSound.play();
+
+        // Handle potential promise rejection
+        if (playPromise !== undefined) {
+            playPromise.then(_ => {
+                // Successful play
+                errorMessage.textContent = "";
+            })
+            .catch(error => {
+                // Autoplay was prevented or other error
+                errorMessage.textContent = "Audio play failed: " + error.message;
+                console.error("Sound play error:", error);
+            });
+        }
+    } catch (error) {
+        errorMessage.textContent = "Unexpected error: " + error.message;
+        console.error("Unexpected sound play error:", error);
+    }
+}
+
+// Add click event listeners with error handling
+document.querySelectorAll('.clickable').forEach(element => {
+    element.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent any default actions
+        playClickSound();
+    });
+});
+
+// Optional: Log when the script runs
+console.log("Click sound script loaded successfully");

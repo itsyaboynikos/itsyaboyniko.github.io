@@ -154,62 +154,23 @@ svg {
     filter:brightness(50%)
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Website with Click Sounds</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-        }
-        .clickable {
-            background-color: #f0f0f0;
-            border: 2px solid #333;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .clickable:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Click Sound Demo</h1>
-    
-    <!-- Audio element to play click sound -->
-    <audio id="clickSound">
-        <source src="assets/soundfx.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+.clickable {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    display: inline-block;
+}
 
-    <!-- Clickable elements -->
-    <div class="clickable" onclick="playClickSound()">Button 1</div>
-    <div class="clickable" onclick="playClickSound()">Button 2</div>
-    <div class="clickable" onclick="playClickSound()">Button 3</div>
+.clickable {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f0f0f0;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid black;
+}
 
-    <script>
-        function playClickSound() {
-            const clickSound = document.getElementById('clickSound');
-            
-            // Reset the audio to start from the beginning each time
-            clickSound.currentTime = 0;
-            
-            // Play the sound
-            clickSound.play();
-        }
-
-        // Optional: Add click sound to all clickable elements
-        document.addEventListener('DOMContentLoaded', () => {
-            const clickables = document.querySelectorAll('.clickable');
-            clickables.forEach(element => {
-                element.addEventListener('click', playClickSound);
-            });
-        });
-    </script>
-</body>
-</html>
+#errorMessage {
+    color: red;
+}
