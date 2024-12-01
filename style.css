@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgb(21, 21, 22);
-    background-image: url('https://itsyaboynikos.github.io/A836308F-4DBE-49F7-AFF9-BDD4EAB1C6FF.gif');
+    background-image: url('https://itsyaboynikos.github.io/meow.gif');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -40,7 +40,7 @@ body {
     padding: 1vh;
     border-radius: 0.75vh;
   }
-s
+
 .sidebar button, .sidebar img {
     width: 50px;
     height: 50px;
@@ -67,8 +67,8 @@ s
 }
 
 .icon-container img {
-    width: 5.0vh;
-    height: 5.0vh;
+    width: 7.5vh;
+    height: 7.5vh;
     cursor: pointer;
     margin-bottom: 5px;
 }
@@ -152,18 +152,4 @@ s
 
 svg {
     filter:brightness(50%)
-}
-
-.clickable {
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f0f0f0;
-    margin: 10px;
-    display: inline-block;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
 }
