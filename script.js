@@ -32,7 +32,7 @@ const volumeSlider = document.getElementById("volumeSlider");
 let isPlaying = false;
 
 
-const audio = new Audio(`/music/song.mp3`);
+const audio = new Audio(`/music/song1.mp3`);
 audio.loop = true; 
 
 playButton.addEventListener("click", () => {
@@ -61,4 +61,5 @@ volumeSlider.addEventListener("input", (event) => {
     audio.volume = volume; 
     console.log("Volume:", volume);
 });
+
 
